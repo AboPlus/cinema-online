@@ -1,0 +1,59 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      # 跨域
+      routes:
+        - id: gateway-user
+          uri: lb://service-actor
+          predicates:
+            - Path=/user/**
+
+        - id: gateway-actor
+          uri: lb://service-actor
+          predicates:
+            - Path=/edu-actor/**
+
+        - id: gateway-oss
+          uri: lb://service-oss
+          predicates:
+            - Path=/oss/**
+
+        - id: gateway-subject
+          uri: lb://service-subject
+          predicates:
+            - Path=/edu-subject/**
+
+        - id: gateway-movie
+          uri: lb://service-movies
+          predicates:
+            - Path=/edu-movies/**
+
+        - id: gateway-movie-chapter
+          uri: lb://service-movies
+          predicates:
+            - Path=/edu-chapter/**
+
+        - id: gateway-movie-chapter
+          uri: lb://service-movies
+          predicates:
+            - Path=/edu-video-movie/**
+
+        - id: gateway-chapter
+          uri: lb://service-video
+          predicates:
+            - Path=/edu-chapter/**
+
+        - id: gateway-video
+          uri: lb://service-video
+          predicates:
+            - Path=/edu-video/**
