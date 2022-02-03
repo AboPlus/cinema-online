@@ -1,6 +1,6 @@
 # 系统简介
 ## 概述
-在线影视系统是基于Spring Boot、Spring Cloud & Alibaba、Vue等技术的前后端分离的系统，内置模块暂时有演员模块、影片分类模块、影片列表、在线播放、Echarts图表等。
+在线影视系统是基于Spring Boot、Spring Cloud & Alibaba、Vue等技术的前后端分离的系统，内置模块暂时有演员模块、影片分类模块、影片列表、在线播放、Echarts图表等。下一步预计维护认证模块、授权模块及动态路由。
 
 # 技术选型
 ## 后端技术栈
@@ -23,3 +23,5 @@ cinema-online
 │       └── service-video     // 视频模块 [8085]
 ├──pom.xml             		    // 公共依赖
 ```
+
+前端地址：https://github.com/AboPlus/cinema-online-ui
